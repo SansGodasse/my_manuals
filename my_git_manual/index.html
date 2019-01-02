@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Manuel à bibi de git</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR|Tangerine" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    </head>
+        
+    <body>
+    	<h1>Mon super manuel de git et de github</h1>
+
+        <!-- Git -->
+
+    	<section id="gitSection" class="content">
+    		<header>
+    			<h2>Git</h2>
+    		</header>
+
+    		<h3>Liste des commandes utiles de la console</h3>
+
+            <!-- Commandes de la console -->
+    		<table class="manualTable" id="handyCommandsTable">
+    			<tr>
+    				<th>Commande</th>
+    				<th>Description</th>
+    			</tr>
+    			<tr>
+    				<td><code>pwd</code></td>
+    				<td>Donne le répertoire courant</td>
+    			</tr>
+    			<tr>
+    				<td><code>ls</code></td>
+    				<td>Donne la liste des fichiers et répertoires dans le dossier courant</td>
+    			</tr>
+    			<tr>
+    				<td><code>ls -l</code></td>
+    				<td>Affiche une liste des fichiers et répertoires du dossier courant</td>
+    			</tr>
+    			<tr>
+    				<td><code>ls -a</code></td>
+    				<td>Donne des infos supplémentaires</td>
+    			</tr>
+    			<tr>
+    				<td><code>cd nomRépertoire</code></td>
+    				<td>Permet de se placer dans un répertoire</td>
+    			</tr>
+    			<tr>
+    				<td><code>cd ..</code></td>
+    				<td>Permet d'aller au répertoire parent</td>
+    			</tr>
+    			<tr>
+    				<td><code>cd ~</code></td>
+    				<td>Revient au répertoire principal</td>
+    			</tr>
+    			<tr>
+    				<td><code>touch nomFichier</code></td>
+    				<td>Permet de créer un fichier</td>
+    			</tr>
+    			<tr>
+    				<td><code>mkdir nomRépertoire</code></td>
+    				<td>Permet de créer un dossier</td>
+    			</tr>
+    			<tr>
+    				<td><code>car nomFichier</code></td>
+    				<td>Affiche le contenu d'un fichier</td>
+    			</tr>
+                <tr>
+                    <td><code>clear</code></td>
+                    <td>Efface la console</td>
+                </tr>
+    			<tr>
+    				<td><code>ctl + shift + inser</code></td>
+    				<td>Permet de coller du texte dans la console</td>
+    			</tr>
+    		</table>
+
+    		<h3>Utilisation de git</h3>
+
+            <!-- Utilisation de git -->
+    		<table class="manualTable" id="gitUseTable">
+    			<tr>
+    				<th>Commande</th>
+    				<th>Description</th>
+    			</tr>
+    			<tr>
+    				<td><code>git config --global user.name "nomDeLUtilisateur"</code></td>
+    				<td>Configure le nom d'utilisateur de git</td>
+    			</tr>
+    			<tr>
+    				<td><code>git config --global user.email "emailDeLUtilisateur"</code></td>
+    				<td>Configure l'email de l'utilisateur de git</td>
+    			</tr>
+    			<tr>
+    				<td><code>git init</code></td>
+    				<td>Active le répertoire courant en repository git (ajoute un dossier caché .git au répertoire)</td>
+    			</tr>
+    			<tr>
+    				<td><code>git status</code></td>
+    				<td>Donne le statut du repository (fichiers indexés ou non pouvant faire l'objet d'un commit)</td>
+    			</tr>
+    			<tr>
+    				<td><code>git log</code></td>
+    				<td>Donne les différents commit du repository</td>
+    			</tr>
+    			<tr>
+    				<td>Touche "q" du clavier</td>
+    				<td>Permet de sortir du log</td>
+    			</tr>
+    			<tr>
+    				<td><code>git add nomDuFichierAIndexer.extension</code></td>
+    				<td>Ajoute un fichier à l'index de git pour pouvoir en faire un commit</td>
+    			</tr>
+    			<tr>
+    				<td><code>git add .</code></td>
+    				<td>Indexe tous les fichiers du repository en vue d'un commit</td>
+    			</tr>
+    			<tr>
+    				<td><code>git commit -m "Entrez ici la description du commit"</code></td>
+    				<td>Permet de créer un commit</td>
+    			</tr>
+    			<tr>
+    				<td><code>git commit -a -m "Entrez ici la description du commit"</code></td>
+    				<td>Le -a permet de créer un commit avec les fichiers qui ont déjà été indexés une fois et sans avoir à les réindexer avec add</td>
+    			</tr>
+    			<tr>
+    				<td><code>git checkout SHADuCommit</code></td>
+    				<td>Revenir à un commit précédent</td>
+    			</tr>
+    			<tr>
+    				<td><code>git checkout master</code></td>
+    				<td>Revenir au dernier commit</td>
+    			</tr>
+    			<tr>
+    				<td><code>git revert SHADuCommit</code></td>
+    				<td>Créé un nouveau commit qui fait exactement l'inverse du précédent (pour annuler le commit précédent)</td>
+    			</tr>
+    			<tr>
+    				<td><code>git commit --amend -m "Votre nouveau message pour le dernier commit"</code></td>
+    				<td>Modifie le message du dernier commit</td>
+    			</tr>
+    			<tr>
+    				<td><code>git reset --hard</code></td>
+    				<td>Annule les changements qui n'ont pas encore été commités</td>
+    			</tr>
+                <tr>
+                    <td><code>git branch</code></td>
+                    <td>Affiche les différentes branches du repository</td>
+                </tr>
+                <tr>
+                    <td><code>git branch nomDeLaNouvelleBranche</code></td>
+                    <td>Créé une nouvelle branche</td>
+                </tr>
+                <tr>
+                    <td><code>git branch -d nomDeLaBrancheASupprimer</code></td>
+                    <td>Supprime une branche</td>
+                </tr>
+                <tr>
+                    <td><code>git checkout nomDeLaBranche</code></td>
+                    <td>Se placer sur une branche</td>
+                </tr>
+                <tr>
+                    <td><code>git checkout -b nomDeLaNouvelleBranche</code></td>
+                    <td>Créé une nouvelle branche et nous place dessus</td>
+                </tr>
+                <tr>
+                    <td><code>git merge nomDeLaBrancheAFusionner</code></td>
+                    <td>
+                        Permet de fusionner 2 branches<br />
+                        Par exemple pour ajouter dans une branche A les mises à jour que vous avez faites dans une autre branche B, on se place dans la branche A avant d'exécuter la commande <code>git merge brancheB</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>git blame nomDuFichier.sonExtension</code></td>
+                    <td>
+                        Liste toutes les modifications qui ont été faites sur le fichier ligne par ligne. À chaque modification est associé le début du sha du commit correspondant.
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>git show debutCommitSHA</code></td>
+                    <td>
+                        Affiche les détails du commit recherché en saisissant le début de son sha.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fichier <em>.gitignore</em></td>
+                    <td>
+                        Fichier à créer à la racine du projet. Il doit contenir les noms des fichiers à ignorer (par exemple des fichiers contenant des mots de passe).<br />
+                        Exemple de contenu du fichier <em>.gitignore</em> :
+                        <pre>
+keys/monFichierDeClesAPI.zog
+monFichierDeConfiguration.conf
+                        </pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>git stash</code> et <code>git stash pop</code> ou <code>git stash apply</code></td>
+                    <td>
+                        <p>
+                            <code>git stash</code> met de côté les modifications en cours qui n'ont pas fait l'objet d'un commit pour pouvoir faire d'autres modifications, par exemple lorsque quelqu'un nous demande de régler un bug qui n'a rien à voir avec ce sur quoi on travaille actuellement. On stash notre travail, on règle le bug, on commit les modifications apportées pour régler le bug et on revient sur notre travail avec <code>git stash pop</code> ou <code>git stash apply</code>.
+                        </p>
+                        <p>
+                            La différence entre <code>pop</code> et <code>apply</code> est que nos modifications sont effacées du stash lors d'un <code>pop</code>.
+                        </p>
+                    </td>
+                </tr>
+    		</table>
+
+            <h3>Edition du fichier de configuration</h3>
+
+            <!-- Configuration de git -->
+            <table class="manualTable" id="gitConfig">
+                <tr>
+                    <th>Action</th>
+                    <th>Comment faire</th>
+                </tr>
+                <tr>
+                    <td>Ouvrir le fichier de configuration de Git</td>
+                    <td>
+                        <ul>
+                            <li>Se placer dans le répertoire personnel <code>C:\Users\nomDeLUtilisateur</code></li>
+                            <li>Ouvrir le fichier <code>.gitconfig</code></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Créer des alias pour aller plus vite</td>
+                    <td>
+                        <ul>
+                            <li>Ouvrir le fichier de configuration de Git</li>
+                            <li>
+                                Ajouter à la fin les alias<br />
+                                <pre>
+[alias]
+    ci = commit
+    co = checkout
+    st = status
+    br = branch
+                                </pre>
+                            </li>
+                            <li>Maintenant on peut taper juste <code>git st</code> pour afficher le status</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+    	</section>
+
+        <!-- GitHub -->
+
+    	<section id="gitHubSection" class="content">
+    		<header>
+    			<h2>GitHub</h2>
+
+    			<h3>Actions possibles</h3>
+
+    			<table>
+    				<tr>
+    					<th>Action</th>
+    					<th>Comment faire</th>
+    				</tr>
+    				<tr>
+    					<td>Récupérer un repository</td>
+    					<td>
+    						<ul>
+    							<li>Taper le nom du repository désiré dans la barre de recherche</li>
+    							<li>Cliquer sur Clone or download</li>
+    							<li>Copier le lien</li>
+    							<li>Exécuter <code>git clone https://lienCopiéSurGitHub</code> dans le dossier devant recevoir le repository</li>
+    						</ul>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>Créer un repository</td>
+    					<td>
+    						<ul>
+	    						<li>Cliquer sur le + situé à gauche de l'avatar puis sur new repository</li>
+	    						<li>Renseigner le nom, la description et ajouter une licence</li>
+	    						<li>Au passage on peut initialiser le repository avec un fichier README.md pour pouvoir immédiatement le cloner sur notre ordi. Inutile si on a déjà un repository sur l'ordi.</li>
+	    					</ul>
+    					</td>
+    				</tr>
+                    <tr>
+                        <td>Connecter un repository local avec un repository GitHub</td>
+                        <td>
+                            <ul>
+                                <li>Ouvrir une console dans le repository local</li>
+                                <li>Exécuter <code>git remote add origin https://github.com/nomUtilisateur/nomProjet</code></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Envoyer le code du repository local vers GitHub</td>
+                        <td>
+                            <ul>
+                                <li>Ouvrir une console dans le repository local</li>
+                                <li>Faire un commit des modifications apportées au code</li>
+                                <li>Utiliser la commande <code>git push origin master</code> ou, si on travaille sur une branche, <code>git push origin nomDeLaBranche</code></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Récupérer des modifs depuis GitHub vers le repository local</td>
+                        <td>
+                            <ul>
+                                <li>Ouvrir une console dans le repository local</li>
+                                <li>Exécuter <code>git pull origin master</code></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Faire une pull request pour contribuer à un projet open source</td>
+                        <td>
+                            <ol>
+                                <li>
+                                    Lire les consignes de contribution dans le <em>README.md</em> du projet
+                                </li>
+                                <li>
+                                    Sur le repository auquel on veut contribuer, faire un <em>Fork</em> en cliquant sur le bouton <em>Fork</em> du repository
+                                </li>
+                                <li>
+                                    Cloner le repository sur notre ordi via un <code>git clone</code>
+                                </li>
+                                <li>
+                                    Créer une nouvelle branche dans le repository cloné avec <code>git checkout -b nomDeLaNouvelleBranche</code>
+                                </li>
+                                <li>
+                                    Faire les modifications et faire un commit
+                                </li>
+                                <li>
+                                    Envoyer les modifications sur GitHUB avec un <code>git push origin nomDeLaNouvelleBranche</code>
+                                </li>
+                                <li>
+                                    Aller sur le repository GitHUB cloné et cliquer sur <em>Compare & pull-request</em>
+                                </li>
+                                <li>
+                                    Rédiger un joli message expliquant le pourquoi du comment et c'est parti !
+                                </li>
+                            </ol>
+                        </td>
+                    </tr>
+    			</table>
+
+    			<h3>Astuces</h3>
+
+    			<ul id="tipsList">
+    				<li>touche T : Faire une recherche</li>
+    			</ul>
+    		</header>
+    	</section>
+        <div id="upBtn"><a href="#">▲</a></div>
+        <script type="text/javascript" src="js/goUp.js"></script>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Manuel à bibi de twig</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR|Tangerine" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    </head>
+        
+    <body>
+    	<h1>Mon super manuel de twig</h1>
+
+        <section class="content">
+            <h2>Qu'est-ce que c'est que ce truc ?</h2>
+
+            <p>
+                Ce truc est un moteur de template pour php. C'est utilisé entre autres par symfony.
+            </p>
+
+            <h2>Liens utiles</h2>
+
+            <ul>
+                <li><a href="https://twig.symfony.com/doc/2.x/">Documentation de twig</a></li>
+                <li><a href="https://www.grafikart.fr/tutoriels/twig-832" target="_blank">Tuto de Grafikart</a></li>
+            </ul>
+
+            <h2>Utilisation</h2>
+
+            <ol>
+                <li>
+                    Mettre l'autoloader de composer avec <code>require 'vendor/autoload.php';</code>
+                </li>
+                <li>
+                    Créer un <em>loader</em> avec <code>$loader = new Twig_Loader_Filesystem(__DIR__ . '/nom_du_dossier_ou_on_va_mettre_nos_templates');</code>
+                </li>
+                <li>
+                    Créer un objet <em>Environment</em> avec
+<pre>
+$twig = new Twig_Environment($loader, array(
+    'cache' => __DIR__ . '/nom_du_dossier_ou_on_veut_stocker_le_cache'
+));
+</pre>
+                </li>
+                <li>
+                    Afficher le template avec <code>echo $twig->render('home.twig');</code><br />
+                    ou, si on a des variables à utiliser dans le template, avec <code>echo $twig->render('home.twig', $tableauContenantLesVariablesAPasserAuTemplate);</code>
+                </li>
+            </ol>
+            <p>
+                Exemple :<br/>
+                Fichier <em>index.php</em>
+<pre>
+require 'vendor/autoload.php';
+
+$loader = new Twig_Loader_Filesystem(__DIR__ . '/templates');
+$twig = new Twig_Environment($loader, [
+    'cache' => __DIR__ . '/tmp' // En développement, mettre false pour éviter de vider le cache à la main
+]);
+
+echo $twig->render('home.twig', [
+    'name' => 'Lenny Bards',
+    'email' => 'lenny.bards@gmail.com',
+    'address' => [
+        'street' => '5 rue du sommet',
+        'city' => 'Sainte Bernadette de la Creuse en Brie'
+    ],
+    'phone' => ['0667917326', '0761459331']
+]);
+</pre>
+                Fichier <em>home.twig</em><br />
+<pre>
+Hello world! I'm {{ name }} and my email is {{ email }}.
+I live in {{ address.street }}, {{ address.city }}.
+My phone numbers are {{ phone.0 }}, {{ phone.1 }} and {{ phone.2 }}
+</pre>
+            </p>
+            <p>
+                Note : si un index n'existe pas dans le tableau de paramètres envoyés au template, il n'y aura pas d'erreur et le template affichera uniquement les index existants. Ici, il n'y a pas de 3ème numéro de téléphone, donc le template affichera (sans les retour à la ligne) :
+<pre>
+Hello world! I'm Lenny Bards and my email is lenny.bards@gmail.com.
+I live in 5 rue du sommet, Sainte Bernadette de la Creuse en Brie.
+My phone numbers are 0667917326, 0761459331 and 
+</pre>
+                C'est cool, ça évite d'avoir à écrire des trucs du genre <code>if (isset($phone[2])) { echo $phone[2]; }</code>
+            </p>
+            <p>
+                Encore une note : twig fait automatiquement des <em>htmlentities()</em> pour échapper d'éventuels morceaux de code HTML.
+            </p>
+
+            <h2>Installation</h2>
+
+            <p>
+                Avec composer :
+                <ul>
+                    <li>
+                        Dans la console avec <code>composer require "twig/twig:^2.0"</code>
+                    </li>
+                    <li>
+                        Dans le fichier <em>composer.json</em> avec
+                        <pre>
+"require": {
+    "twig/twig": "^2.0"
+}
+                        </pre>
+                    </li>
+                </ul>
+            </p>
+        </section>
+
+        <div id="upBtn"><a href="#">▲</a></div>
+        <script type="text/javascript" src="js/goUp.js"></script>
+    </body>
+</html>

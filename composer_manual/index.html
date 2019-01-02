@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Manuel à bibi de composer</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR|Tangerine" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    </head>
+        
+    <body>
+    	<h1>Mon super manuel de composer</h1>
+
+        <section class="content">
+            <h2>Qu'est-ce que c'est que ce truc ?</h2>
+
+            <p>
+                Ce truc permet d'installer des librairies facilement sans avoir à bidouiller à la main.
+            </p>
+
+            <h2>Tuto de Grafikart</h2>
+
+            <p><a href="https://www.grafikart.fr/tutoriels/composer-480" target="_blank">Cliquez ici</a></p>
+
+            <h2>Utilisation</h2>
+
+            <table>
+                <tr>
+                    <td>
+                        <code>composer init</code>
+                    </td>
+                    <td>
+                        A exécuter dans le dossier du projet pour créer le fichier <em>composer.json</em> de manière intéractive.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>composer install</code>
+                    </td>
+                    <td>
+                        Installe les packages nommés dans le fichier <em>composer.json</em>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>composer update</code>
+                    </td>
+                    <td>
+                        Met à jour le dossier <em>vendor</em> si on a fait des modifs sur composer.json.
+                    </td>
+                </tr>
+            </table>
+
+            <h2>Fichier composer.json</h2>
+
+            <p>
+                Voici un exemple de fichier <em>composer.json</em> pour comprendre la structure :<br />
+                <pre>
+{
+    "name": "nom_de_l_auteur/nom_du_projet",
+    "description": "La description du projet (facultatif)",
+    "require": {
+        "auteur_de_la_librairie/nom_de_la_librairie": "version",
+        "michelf/php-markdown": "^1.8"
+    },
+    "authors": [
+        {
+            "name": "nom_de_l_auteur",
+            "email": "email_de_l_auteur@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"nom_du_namespace\\": "mes_librairies_perso/MesClasses"}
+    }
+}
+                </pre>
+            </p>
+
+            <h2>Installation</h2>
+
+            <p>
+                <a href="https://getcomposer.org/" target="_blank">Aller ici</a>
+            </p>
+        </section>
+
+        <div id="upBtn"><a href="#">▲</a></div>
+        <script type="text/javascript" src="js/goUp.js"></script>
+    </body>
+</html>

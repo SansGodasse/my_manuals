@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Manuel à bibi de CSS</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR|Tangerine" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    </head>
+        
+    <body>
+    	<h1>Mon super manuel CSS</h1>
+
+        <section class="content">
+            <h2>Les propriétés</h2>
+
+            <table>
+                <tr>
+                    <th>Propriété</th>
+                    <th>Définition</th>
+                </tr>
+                <tr>
+                    <td><code>padding</code></td>
+                    <td>
+                        Gère l'espacement entre le texte et les limites du conteneur.<br />
+                        <code>padding: 🠉 🠊 🠋 🠈;</code> Pour renseigner en une fois les 4 directions.<br />
+                        <code>padding: (🠉🠋) (🠈🠊);</code> Si le haut = le bas et la gauche = la droite on peut ne mettre que 2 valeurs.
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>margin</code></td>
+                    <td>
+                        Gère l'espacement entre les blocs.<br />
+                        <code>margin: 🠉 🠊 🠋 🠈;</code> Pour renseigner en une fois les 4 directions.<br />
+                        <code>margin: (🠉🠋) (🠈🠊);</code> Si le haut = le bas et la gauche = la droite on peut ne mettre que 2 valeurs.
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>::before et ::after</code></td>
+                    <td>
+                        Permet d'afficher quelquechose avant (:before) ou après (:after) le bloc.<br />
+                        Exemple : <em class="css-before-after">World</em><br />
+                        Ici on insère <em>'Hello '</em> avec <code>nom-classe:before { content: 'Hello '; }</code> et <em>' !'</em> avec <code>nom-classe:after { content: ' !'; }</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>overflow</code></td>
+                    <td>
+                        Choisi le comportement à adopter quand le texte dépasse d'un bloc.<br />
+                        <ul>
+                            <li><code>overflow: visible</code> Le texte reste visible à l'extérieur du bloc <em>(par défaut)</em></li>
+                            <li><code>overflow: hidden</code> Masque le texte qui dépasse</li>
+                            <li><code>overflow: scroll</code> Ajoute des barres de défilement au bloc</li>
+                            <li><code>overflow: auto</code> Ajoute des barres de dévilement au bloc uniquement si besoin <em>(valeur conseillée)</em></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>div:nth-of-type(even)</code></td>
+                    <td>
+                        <code>div:nth-of-type(even)</code> Applique la mise en forme aux div pairs<br />
+                        <code>div:nth-of-type(odd)</code> Applique la mise en forme aux div impaires<br />
+                        <code>div:nth-of-type(an+b)</code> Forme générale où <em>a</em> et <em>b</em> sont des nombres entiers<br />
+                        Utile pour mettre en valeur les lignes d'un tableau. Exemple sur un tableau WordPress :
+<pre>
+.wp-block-table tbody tr:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>white-space: nowrap;</code></td>
+                    <td>
+                        Empêche le retour à la ligne possible à chaque espace
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <div id="upBtn"><a href="#">▲</a></div>
+        <script type="text/javascript" src="js/goUp.js"></script>
+    </body>
+</html>

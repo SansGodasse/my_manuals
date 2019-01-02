@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Manuel à bibi de Sublime Text</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR|Tangerine" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    </head>
+        
+    <body>
+    	<h1>Mon super manuel Sublime Text</h1>
+
+        <section class="content">
+
+            <article>
+                <h2>Les raccourcis clavier</h2>
+            </article>
+
+            <article>
+                <h2>Les packages</h2>
+            </article>
+
+            <article>
+                <h2>Ouvrir Sublime Text via le menu du clic droit</h2>
+
+                <ol>
+                    <li>
+                        Appuyer sur <em>windows + r</em> et entrer <em>regedit</em>. Une fenêtre s'ouvre avec un panneau de sélection de clés (avec des icônes de dossier) sur la gauche et une zone vide sur la droite.
+                    </li>
+                    <li>
+                        Dérouler le "dossier" <em>HKEY_CLASSES_ROOT/*/shell</em>
+                    </li>
+                    <li>
+                        Clic droit sur <em>shell</em> et sélectionner <em>Nouveau > clé</em> et la nommer <em>Open with Sublime Text</em>
+                    </li>
+                    <li>
+                        Optionnel : vous pouvez modifier le texte affiché dans le menu déroulant en entrant une valeur dans l'icone <em>ab</em> nommée <em>(par défaut)</em> en mettant par exemple "Ouvrir avec Sublime Text".
+                    </li>
+                    <li>
+                        Clic droit sur <em>Open with Sublime Text</em> et sélectionner <em>Nouveau > clé</em> et la nommer <em>command</em>. Sélectionner cette dernière si besoin.
+                    </li>
+                    <li>
+                        Dans la zone de droite, faire un double-clic gauche sur l'icone <em>ab</em> nommée <em>(par défaut)</em> et entrer <code>"C:\Sublime Text\sublime_text.exe" "%1"</code> (adapter le chemin vers <em>sublime_text.exe</em> si besoin).
+                    </li>
+                    <li>
+                        Bonus : ajouter l'icône de Sublime Text
+                        <ol>
+                            <li>
+                                Faire un clic droit sur la clé <em>Open with Sublime Text</em>
+                            </li>
+                            <li>
+                                Sélectionner <em>Nouveau > Valeur chaîne</em> et la nommer <em>Icon</em>
+                            </li>
+                            <li>
+                                Double-clic sur l'icone <em>ab</em> nommée <em>(par défaut)</em> et entrer <code>C:\Sublime Text\sublime_text.exe,0</code> (cette fois-ci il n'y a pas de guillements ""). Adapter le chemin vers <em>sublime_text.exe</em> si besoin.
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </article>
+        </section>
+
+        <div id="upBtn"><a href="#">▲</a></div>
+        <script type="text/javascript" src="js/goUp.js"></script>
+    </body>
+</html>
